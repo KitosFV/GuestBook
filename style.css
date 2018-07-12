@@ -1,0 +1,17 @@
+
+table{
+  border-collapse: collapse;
+  border:solid;
+  border-width: 2px;
+}
+
+th{
+  background: #B8B8B8;
+  border:solid;
+  border-width: 2px;
+}
+
+td{
+  border:solid;
+  border-width: 2px;
+}
