@@ -3,10 +3,18 @@ $res = htmlspecialchars($_GET["res"]);
 $name = htmlspecialchars($_GET["name"]);
 $email = htmlspecialchars($_GET["email"]);
 if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-  $toWrite = "<tr><th>".$name."</th><th>".$email."</th></tr><tr><td></td><td>".$res."</td></tr>";
-  $msg = fopen("./messages/".$name.".txt","w");
+  $toWrite = $name."\n".$email."\n".$res;
+  $time = getdate();
+  $msg = fopen("./messages/".
+               $time["year"]."-".
+               $time["month"]."-".
+               $time["mday"]."-".
+               $time["hours"]."-".
+               $time["minutes"]."-".
+               $time["seconds"].".txt","w");
   fwrite($msg,$toWrite);
   fclose($msg);
+  echo "<p align=\"center\">Response succesfuly added</p>";
 }
-echo "<p align=\"center\">Response succesfuly added<\\p>";
+print '<meta http-equiv="refresh" content="2;url=index.php">';
 ?>

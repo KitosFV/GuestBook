@@ -8,6 +8,17 @@
         mkdir('./messages',0777);
       }
       ?>
+    <table>
+      <?php
+	    $msgs = scandir("./messages/");
+        for($i=2;$i<count($msgs);$i++){
+          $time0 = $msgs[i];
+          $file = fopen("./messages/".$msgs[$i],"r");
+          echo fread($file, filesize("./messages/".$msgs[$i]));
+          fclose($file);
+        }
+		?>
+    </table>
     <form action="act.php" methode="get">
       <fieldset>
       <legend>Response info:</legend>
@@ -17,15 +28,5 @@
       <input type="submit">
       </fieldset>
     </form>
-    <table>
-      <?php
-	    $msgs = scandir("./messages/");
-        for($i=2;$i<count($msgs);$i++){
-          $file = fopen("./messages/".$msgs[$i],"r");
-          echo fread($file, filesize("./messages/".$msgs[$i]));
-          fclose($file);
-        }
-		?>
-    </table>
   </body>
 </html>

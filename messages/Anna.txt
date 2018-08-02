@@ -1,1 +1,0 @@
-<tr><th>Anna</th><th>anna@bier.fest</th></tr><tr><td></td><td>good</td></tr>
