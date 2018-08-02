@@ -7,7 +7,7 @@ if(filter_var($email, FILTER_VALIDATE_EMAIL)){
   $time = getdate();
   $msg = fopen("./messages/".
                $time["year"]."-".
-               $time["month"]."-".
+               $time["mon"]."-".
                $time["mday"]."-".
                $time["hours"]."-".
                $time["minutes"]."-".

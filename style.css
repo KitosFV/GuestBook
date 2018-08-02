@@ -1,17 +1,10 @@
-
-table{
-  border-collapse: collapse;
-  border:solid;
-  border-width: 2px;
+.wraper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1em;
+    border: solid 1px;
 }
 
-th{
-  background: #B8B8B8;
-  border:solid;
-  border-width: 2px;
-}
-
-td{
-  border:solid;
-  border-width: 2px;
+.time{
+    background: grey;
 }
