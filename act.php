@@ -2,7 +2,7 @@
 $res = htmlspecialchars($_GET["res"]);
 $name = htmlspecialchars($_GET["name"]);
 $email = htmlspecialchars($_GET["email"]);
-if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+if((filter_var($email, FILTER_VALIDATE_EMAIL))&&($res!=null)&&($name!=null)){
   $toWrite = $name."\n".$email."\n".$res;
   $time = getdate();
   $msg = fopen("./messages/".
