@@ -16,10 +16,6 @@
           $content = file("./messages/$msgs[$i]");
 	  $content[0] = htmlspecialchars($content[0]);
 	  $content[1] = htmlspecialchars($content[1]);
-	  $i = 3;
-	  while($content[2].="\n$content[$i]"){
-	    $i++;
-	  }
 	  $content[2] = htmlspecialchars($content[2]);
           echo "<div class=\"wraper\"><div class=\"time\">$ftime</div><div class=\"time\">Message text</div><div class=\"uinfo\">$content[0](<a href=\"mailto:$content[1]\">$content[1]</a>)</div><div class=\"cont\">$content[2]</div></div>";
         }
