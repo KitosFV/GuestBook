@@ -14,7 +14,7 @@
           $time = explode("-",explode(".",$msgs[$i])[0]);//[0]-y [1]-mon [2]-day [3]-h [4]-min [5]-s
           $ftime = $time[2].".".$time[1].".".$time[0].", ".$time[3].":".$time[4].":".$time[5];
           $content = explode("\n",file_get_contents("./messages/".$msgs[$i]));//[0]-name [1]-email [2]-msg
-          echo "<div class=\"wraper\"><div class=\"time\">$ftime</div><div class=\"time\">Message text</div><div class=\"uinfo\">$content[0]($content[1])</div><div class=\"cont\">$content[2]</div></div>";
+          echo "<div class=\"wraper\"><div class=\"time\">$ftime</div><div class=\"time\">Message text</div><div class=\"uinfo\">$content[0](<a href=\"mailto:$content[1]\">$content[1]</a>)</div><div class=\"cont\">$content[2]</div></div>";
         }
 		?>
     <form action="act.php" methode="get">
